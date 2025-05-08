@@ -11,7 +11,7 @@ var can_dash = true
 var mousePos = Vector2()
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
-func _physics_process(delta: float):
+func _physics_process(delta):
 	mousePos = get_global_mouse_position()
 	var targetDir = get_angle_to(mousePos - position.normalized())
 	rotation += sin(targetDir * rotation_speed) 
@@ -28,6 +28,10 @@ func _physics_process(delta: float):
 		can_dash = false
 		dash_direction = direction.normalized()
 		velocity = dash_direction * dash_speed
+		
+		#var dash_direction = get_global_mouse_position() - self.position
+		#dash_direction = dash_direction.normalized()
+		#velocity = dash_direction * dash_speed
 		velocity *= 1.0 - (friction * delta)
 		$Dash_Cooldown.start()
 	

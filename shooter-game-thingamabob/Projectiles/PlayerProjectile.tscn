@@ -1,0 +1,27 @@
+[gd_scene load_steps=4 format=3 uid="uid://bdxfby57hwhdt"]
+
+[ext_resource type="Script" uid="uid://eek11hghgi2w" path="res://PlayerProjectile.gd" id="1_v7kjd"]
+[ext_resource type="Texture2D" uid="uid://cibav0tn2ifeg" path="res://pixil-frame-0.png" id="2_rva4n"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_gmw43"]
+radius = 4.0
+height = 16.0
+
+[node name="Projectile" type="Area2D"]
+script = ExtResource("1_v7kjd")
+speed = 500
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+rotation = 1.5708
+scale = Vector2(0.15, 0.15)
+texture = ExtResource("2_rva4n")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+rotation = 1.5708
+shape = SubResource("CapsuleShape2D_gmw43")
+
+[node name="Lifetime" type="Timer" parent="."]
+one_shot = true
+autostart = true
+
+[connection signal="timeout" from="Lifetime" to="." method="_on_lifetime_timeout"]
