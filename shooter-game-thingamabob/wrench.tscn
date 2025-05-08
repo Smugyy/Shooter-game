@@ -1,0 +1,13 @@
+[gd_scene load_steps=2 format=3 uid="uid://c5uy03xlo3yab"]
+
+[ext_resource type="Texture2D" uid="uid://pquu3ns64ti3" path="res://pngegg.png" id="1_objai"]
+
+[node name="Panel" type="Panel"]
+custom_minimum_size = Vector2(52, 52)
+offset_right = 50.0
+offset_bottom = 51.0
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(26, 25)
+scale = Vector2(0.1, 0.1)
+texture = ExtResource("1_objai")

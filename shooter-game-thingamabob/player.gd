@@ -7,6 +7,8 @@ extends CharacterBody2D
 var dash_direction = Vector2()
 var can_dash = true
 
+@export var max_health: int = 3
+@onready var current_health = max_health
 
 var mousePos = Vector2()
 
