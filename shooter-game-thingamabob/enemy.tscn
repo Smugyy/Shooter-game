@@ -1,0 +1,26 @@
+[gd_scene load_steps=4 format=3 uid="uid://cbs0jrf88vfs2"]
+
+[ext_resource type="Script" uid="uid://ctni1wo6nasgo" path="res://enemy.gd" id="1_4gyqm"]
+[ext_resource type="Texture2D" uid="uid://b0qqcueirr6b6" path="res://pixelated-meteor-icon-xem4k6hdszuozvcy.png" id="1_7k104"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_4gyqm"]
+radius = 57.7062
+
+[node name="Enemy" type="Area2D"]
+script = ExtResource("1_4gyqm")
+spawn_point_count = 3
+rotate_speed = 90
+direction_change_interval = 4
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+scale = Vector2(0.1, 0.1)
+texture = ExtResource("1_7k104")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_4gyqm")
+
+[node name="ShootTimer" type="Timer" parent="."]
+
+[node name="Rotator" type="Node2D" parent="."]
+
+[connection signal="timeout" from="ShootTimer" to="." method="_on_shoot_timer_timeout"]

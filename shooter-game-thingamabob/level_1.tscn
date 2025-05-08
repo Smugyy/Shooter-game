@@ -1,0 +1,11 @@
+[gd_scene load_steps=3 format=3 uid="uid://bdscmsmiehohl"]
+
+[ext_resource type="PackedScene" uid="uid://cbs0jrf88vfs2" path="res://enemy.tscn" id="1_hbghi"]
+[ext_resource type="PackedScene" uid="uid://btf8y0gkf2av4" path="res://Player.tscn" id="2_hn12h"]
+
+[node name="Level 1" type="Node2D"]
+
+[node name="Enemy" parent="." instance=ExtResource("1_hbghi")]
+position = Vector2(601, 325)
+
+[node name="Node" parent="." instance=ExtResource("2_hn12h")]
